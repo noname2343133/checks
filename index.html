@@ -1,0 +1,162 @@
+<meta charset="UTF-8" />
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="container">
+    <video width="100" height="100" autoplay="" loop="" playsinline="" class="player" poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII" preload="auto" muted="" disableremoteplayback=""><source src="https://ton.org/_next/static/media/dimond_2-1.hevc.4d6283ed.mp4" type="video/quicktime"><source src="https://ton.org/_next/static/media/dimond_1_VP9.29bcaf8e.webm" type="video/webm"></video>
+    <div class="main-balance">
+    <span class="balance">Маркет</span>
+    <span class="main-wallet hint">Покупайте криптовалюту у пользователей без посредников</span>
+    </div>
+    <button class="button" onclick="window.location.href='#'"><i class="fa fa-arrow-circle-down"></i> Купить у пользователей</button>
+</div>
+<div class="btc">
+    <i class="fa fa-user-circle" style="padding-left: 15px; color: #708499; font-size: 25px; padding-top: 5px;"></i>
+    <div class="btc-info">
+        <span>Профиль продавца</span>
+        <span class="hint wall">Настройки объявлений и платежей</span>
+    </div>
+</div>
+<hr/>
+<div class="btc1">
+    <i class="fa fa-plus-circle" style="padding-left: 17px; color: #708499; font-size: 25px;"></i>
+    <div class="btc-info">
+        <span class="link awe">Создать объявлений</span>
+    </div>
+</div>
+<div class="block"></div>
+<div class="btc2">
+    <i class="fa fa-bell-o" style="padding-left: 15px; color: #708499; font-size: 25px; padding-top: 5px;"></i>
+    <div class="btc-info">
+        <span style="padding-top: 10px;">Уведомления</span>
+    </div>
+</div>
+<hr/>
+<div class="btc2">
+    <i class="fa fa-commenting-o" style="padding-left: 15px; color: #708499; font-size: 25px; padding-top: 5px;"></i>
+    <div class="btc-info">
+        <span style="padding-top: 10px;">Справка</span>
+    </div>
+</div>
+
+<script>
+let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+Telegram.WebApp.onEvent('backButtonClicked', function(){
+	tg.BackButton.hide();
+    window.location.href='https://79.137.198.24/tg/webapp/index.php?id=' + tg.initDataUnsafe.user.id
+});
+</script>
+
+<style>
+body{
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+    font-family: "Roboto",sans-serif;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+.hint{
+	color: var(--tg-theme-hint-color);
+}
+.link{
+	color: var(--tg-theme-link-color);
+}
+.awe{
+    padding-top: 3px;
+}
+.container{
+    padding-top: 15px;
+    text-align: center;
+	align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: #232E3C;
+}
+.block{
+    text-align: center;
+	align-items: center;
+    width: 100%;
+    height: 15px;
+    background-color: #232E3C;
+}
+.main-balance{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.main-wallet {
+    font-size: 15px;
+    margin-top: 10px;
+}
+.balance{
+    font-size: 20px; 
+    font-weight: bold;
+    color: var(--tg-theme-text-color);
+}
+.button {
+  display: inline-block;
+  background: #363D48;
+  color: #CFD1D3;
+  width: 95%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  font-size: 15px;
+}
+.btc{
+    display: flex;
+    padding-top: 15px;
+    width: 100%;
+    height: 50px;
+}
+.btc1{
+    display: flex;
+    padding-top: 15px;
+    width: 100%;
+    height: 40px;
+}
+.btc2{
+    display: flex;
+    padding-top: 5px;
+    width: 100%;
+    height: 40px;
+}
+.btc-info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.wall{
+    padding-top: 3px;
+    font-size: small;
+}
+.ok{
+    padding-top: 10px;
+    margin-left: auto;
+    padding-right: 10px;
+}
+hr{
+    margin: 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 0.1px solid black;
+}
+.add{
+    font-weight: bold;
+    font-size: small;
+    padding-top: 15px;
+    text-align: center;
+	align-items: center;
+}
+.fa {
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
